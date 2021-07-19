@@ -5,7 +5,7 @@ keywords: 前端,網頁,技術,網頁開發,前端開發,後端開發,JavaScript
 author: jyun1
 language: en
 timezone: ''
-url: https://jyun1desu.github.io/jyun1blog
+url: https://jyun1desu.github.io
 permalink: ':year/:month/:day/:title/'
 permalink_defaults: null
 pretty_urls:
