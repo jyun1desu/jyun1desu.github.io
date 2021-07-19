@@ -61,4 +61,6 @@ exclude: null
 ignore: null
 theme: icarus
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/jyun1desu/jyun1desu.github.io
+  branch: gh-pages
