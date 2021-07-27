@@ -81,7 +81,7 @@ printSomething(`My favorite bear is ${myFavorite}.`)
 
 /* call printSomething as a tagged template literal(標籤樣板字面值)*/
 printSomething`My favorite bear is ${myFavorite}.`
-//["My favorite bear is ", "."] "Lotso"
+//["My favorite bear is ", "."], "Lotso"
 ```
 
 當非使用一般代入的形式、而是在 `printSomething` 後方使用標籤樣板字面值時，會得到一 `Array` 作為第一個變數，第二個則是placeholder `myFavorite` 的值。而第一個 `Array` 內的值看起來是由 `myFavorite` 所在的位置去區隔的
@@ -141,20 +141,23 @@ tagged template 起了什麼作用？
 先來看放函式在插入值中會印出什麼：
 
 ```jsx=
-const primary = false;
-printSomething(`font-size: ${() => primary ? '2em' : '1em'}`)
-// "font-size: () => primary ? '2em' : '1em'"  <- 只是一坨字串
+const printSomething = (...args) => {
+	console.log(args)
+}
 
-printSomething`font-size: ${() => primary ? '2em' : '1em'}`
+printSomething(`font-size: ${(primary) => primary ? '2em' : '1em'}`)
+// "font-size: (primary) => primary ? '2em' : '1em'"  <- 只是一坨字串
+
+printSomething`font-size: ${(primary) => primary ? '2em' : '1em'}`
 /**
 * ["font-size: ", "",]
-* () => primary ? '2em' : '1em'  <- 好像是字串又好像是函式
+* (primary) => primary ? '2em' : '1em'  <- 好像是字串又好像是函式
 **/
 ```
 
-magic～～～這裡的 `() => primary ? '2em' : '1em'` 是貨真價實的函式！
+magic～～～這裡的 `(primary) => primary ? '2em' : '1em'` 是貨真價實的函式！
 
-![](https://i.imgur.com/UHcqNka.jpg)
+![](https://imgur.com/5r5SMbq.jpg)
 
 既然是函式，那就只剩下執行它這個任務了！
 來改寫一下很簡陋的 `printSomething`，順便改名成 `printStyles` ：
@@ -183,7 +186,7 @@ color: ${(props)=> props.color}
 `
 
 /*
-"font-size: 1em;
+"font-size: 2em;
 color: pink;"
 */
 ```
