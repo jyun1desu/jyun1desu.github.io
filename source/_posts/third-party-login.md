@@ -1,7 +1,7 @@
 ---
 title: 手動建立 Google 、 Facebook 第三方登入
 date: 2021-07-19 20:44:05
-cover: img/covers/js.jpg
+cover: img/covers/2.png
 categories:
 - JavaScript
 tags:

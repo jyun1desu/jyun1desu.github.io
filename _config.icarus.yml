@@ -183,7 +183,7 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: jyun1desu
+        author: jyun1
         # Author's current location
         location: Taipei
         # URL or path to the avatar image
