@@ -63,4 +63,4 @@ theme: icarus
 deploy:
   type: git
   repo: https://github.com/jyun1desu/jyun1desu.github.io
-  branch: master
+  branch: gh-pages
