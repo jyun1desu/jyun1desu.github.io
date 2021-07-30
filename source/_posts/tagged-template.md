@@ -1,7 +1,7 @@
 ---
 title: 'styled-components 背後的魔法: Tagged template'
 date: 2021-07-19 23:11:37
-cover: img/covers/2.png
+cover: img/covers/js.png
 categories:
 - JavaScript
 tags:
